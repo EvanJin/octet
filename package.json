@@ -5,6 +5,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "dev:octet-pro": "turbo --filter=octet-pro dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

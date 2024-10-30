@@ -3,5 +3,6 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "less.lint.unknownAtRules": "ignore"
 }

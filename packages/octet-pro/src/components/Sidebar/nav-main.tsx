@@ -19,7 +19,7 @@ import {
 
 import router, { Route } from "@/config/routes"
 import { NavLink, useLocation } from "react-router-dom"
-import Icon from "../Icon"
+import Icon from "@/components/Icon"
 
 export function NavMain() {
   const location = useLocation()
@@ -39,18 +39,18 @@ export function NavMain() {
       )
     }
     return (
-      <SidebarMenuButton
-        tooltip={item.name}
-        isActive={location.pathname === item.path}
+      <NavLink
+        to={item.path as string}
+        className="w-full h-full flex items-center gap-2"
       >
-        <NavLink
-          to={item.path as string}
-          className="w-full h-full flex items-center gap-2"
+        <SidebarMenuButton
+          tooltip={item.name}
+          isActive={location.pathname === item.path}
         >
           {item.icon && <Icon name={item.icon} />}
           {state === "expanded" && <span>{item.name}</span>}
-        </NavLink>
-      </SidebarMenuButton>
+        </SidebarMenuButton>
+      </NavLink>
     )
   }
 

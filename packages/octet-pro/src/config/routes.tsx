@@ -6,6 +6,7 @@ export type Route = RouteObject & {
   name?: string
   icon?: string
   children?: Route[]
+  hideInMenu?: boolean
 }
 
 const routes: Route[] = [
@@ -58,7 +59,17 @@ const routes: Route[] = [
 
 export default createBrowserRouter([
   {
+    path: "/signin",
+    name: "Signin",
+    hideInMenu: true,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        {createElement(lazy(() => import("@/pages/Signin")))}
+      </Suspense>
+    ),
+  },
+  {
     element: <BaseLayout />,
     children: routes,
   },
-])
+] as Route[])

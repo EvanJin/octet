@@ -23,7 +23,7 @@ import Icon from "../Icon"
 
 export function NavMain() {
   const location = useLocation()
-  const routes = router.routes as Route[]
+  const routes = (router.routes as Route[]).filter((item) => !item.hideInMenu)
   const { state } = useSidebar()
 
   function renderMenu(item: Route) {

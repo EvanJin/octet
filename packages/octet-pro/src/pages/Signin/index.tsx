@@ -1,8 +1,13 @@
+import Icon from "@/components/Icon"
+import { Button } from "@/components/ui/button"
+
 const Signin = () => {
   return (
-    <div className="flex items-center justify-center w-full min-h-svh">
-      Signin
-    </div>
+    <section className="flex flex-col items-center justify-center w-full min-h-svh">
+      <Button>
+        <Icon name="Mail" /> Google Signin
+      </Button>
+    </section>
   )
 }
 
